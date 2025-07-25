@@ -1,0 +1,43 @@
+✅ class MyLayout(BoxLayout):
+Part	Meaning
+class	Python keyword: ek nayi class banane ke liye
+MyLayout	Class ka naam — isse tu .kv file me bhi refer karta hai
+(BoxLayout)	Inheritance — yani MyLayout class, Kivy ke BoxLayout ke features le rahi hai. UI layout ka structure yahin se milta hai
+
+→ Matlab: Ye class ek custom layout define karti hai jo BoxLayout (vertical/horizontal layout) ke base pe kaam karega.
+
+✅ def calculate(self):
+Part	Meaning
+def	Python keyword: function banane ke liye
+calculate	Function ka naam — is function ko tab call karenge jab = button press hoga
+(self)	Har class method me self hota hai — wo current object ko refer karta hai (jiske through tu ids aur UI elements access karta hai)
+
+→ Matlab: Ye ek function hai jo calculation karega — jab tu = button dabata hai.
+
+✅ try:
+Python ka keyword hai
+
+Iska matlab: jo code try ke andar likha hai, wo risky hai (error aasakta hai), to pehle try karo.
+
+Agar error aata hai, to except me chala jaayega.
+
+✅ self.ids.result.text = str(eval(self.ids.input.text))
+Breakdown:
+Part	Meaning
+self	Current layout (MyLayout) object
+self.ids	Kivy ka special dict hai — .kv file me diye gaye id ke basis pe widgets access karta hai
+self.ids.input	Ye TextInput widget hai jiska id: input tha
+self.ids.input.text	Us TextInput me jo user ne likha hai (e.g. "2+3")
+eval(...)	Python ka built-in function jo string expression ko evaluate karta hai ("2+3" → 5)
+str(...)	Result ko string me convert karta hai (taaki hum Label me text assign kar saken)
+self.ids.result.text	Label widget jiska id: result tha — uska text change kar rahe hain
+
+→ Full line ka matlab:
+User ne jo bhi likha input me, usko eval() karke calculate karo, string me convert karo, aur result label me dikhado.
+
+✅ except:
+Agar try block me koi error aaya (e.g. user ne galat expression likha, jaise 2++ ya /0), to ye block run karega.
+
+✅ self.ids.result.text = "Error"
+Agar upar waale calculation me koi error aaya, to "Error" message dikhado result wale label me.
+
